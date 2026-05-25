@@ -1,22 +1,51 @@
-<div style="max-width: 800px; margin: 40px auto; padding: 0 16px; font-family: sans-serif;">
-  <h1>ng-text-editor-lite — Demo</h1>
+<div class="demo-shell">
 
-  <div style="margin-bottom: 12px; display: flex; gap: 8px;">
-    <button (click)="setMode('edit')">Edit</button>
-    <button (click)="setMode('readonly')">Readonly</button>
-    <button (click)="setMode('preview')">Preview</button>
-    <button (click)="setMode('disabled')">Disabled</button>
-  </div>
+  <header class="demo-header">
+    <div class="demo-header__brand">
+      <span class="demo-header__logo">✦</span>
+      <span class="demo-header__title">@thedevankit/ng-text-editor-lite</span>
+      <span class="demo-header__badge">v1.0.0</span>
+    </div>
+    <div class="demo-header__actions">
+      <button class="demo-btn demo-btn--icon" (click)="toggleTheme()" [title]="theme() === 'light' ? 'Switch to dark mode' : 'Switch to light mode'" aria-label="Toggle theme">
+        {{ theme() === 'light' ? '🌙' : '☀️' }}
+        {{ theme() === 'light' ? 'Dark' : 'Light' }}
+      </button>
+    </div>
+  </header>
 
-  <ng-text-editor-lite
-    [content]="html()"
-    [mode]="mode()"
-    [config]="config"
-    (contentChange)="onChange($event)"
-  />
+  <main class="demo-main">
 
-  <details style="margin-top: 24px;">
-    <summary>Raw HTML output</summary>
-    <pre style="background:#f4f4f4; padding:12px; border-radius:4px; overflow:auto;">{{ html() }}</pre>
-  </details>
+    <div class="demo-toolbar-bar">
+      <div class="demo-toolbar-bar__modes">
+        <button class="demo-btn" [class.demo-btn--active]="mode() === 'edit'" (click)="setMode('edit')">Edit</button>
+        <button class="demo-btn" [class.demo-btn--active]="mode() === 'readonly'" (click)="setMode('readonly')">Readonly</button>
+        <button class="demo-btn" [class.demo-btn--active]="mode() === 'preview'" (click)="setMode('preview')">Preview</button>
+        <button class="demo-btn" [class.demo-btn--active]="mode() === 'disabled'" (click)="setMode('disabled')">Disabled</button>
+      </div>
+      <span class="demo-toolbar-bar__hint">Current mode: <strong>{{ mode() }}</strong></span>
+    </div>
+
+    <ng-text-editor-lite
+      [content]="html()"
+      [mode]="mode()"
+      [config]="config()"
+      (contentChange)="onChange($event)"
+    />
+
+    <details class="demo-output">
+      <summary>Raw HTML output</summary>
+      <pre>{{ html() }}</pre>
+    </details>
+
+  </main>
+
+  <footer class="demo-footer">
+    Built by <a href="https://github.com/thedevankit" target="_blank" rel="noopener noreferrer">@thedevankit</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.npmjs.com/package/@thedevankit/ng-text-editor-lite" target="_blank" rel="noopener noreferrer">npm</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/thedevankit/ng-text-editor-lite" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </footer>
+
 </div>
