@@ -29,6 +29,15 @@
           "options": {
             "tsConfig": "projects/ng-text-editor-lite/tsconfig.spec.json"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ng-text-editor-lite/src/**/*.ts",
+              "projects/ng-text-editor-lite/src/**/*.html"
+            ]
+          }
         }
       }
     },
