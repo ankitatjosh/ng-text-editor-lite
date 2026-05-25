@@ -1,0 +1,64 @@
+{
+  "name": "@thedevankit/ng-text-editor-lite",
+  "version": "1.0.0",
+  "description": "Lightweight Angular 18+ WYSIWYG rich text editor with markdown-aware paste, CSS isolation, DOMPurify sanitization, and full Reactive Forms support. No ProseMirror, no Quill, no TipTap.",
+  "keywords": [
+    "angular",
+    "editor",
+    "rich-text",
+    "wysiwyg",
+    "contenteditable",
+    "markdown",
+    "angular18",
+    "standalone",
+    "reactive-forms",
+    "text-editor",
+    "dompurify",
+    "sanitization"
+  ],
+  "author": {
+    "name": "Ankitkumar Singh",
+    "email": "thedevankit@gmail.com",
+    "url": "https://github.com/thedevankit"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedevankit/ng-text-editor-lite.git"
+  },
+  "homepage": "https://github.com/thedevankit/ng-text-editor-lite#readme",
+  "bugs": {
+    "url": "https://github.com/thedevankit/ng-text-editor-lite/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=18.0.0",
+    "@angular/core": ">=18.0.0",
+    "@angular/forms": ">=18.0.0",
+    "dompurify": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "dompurify": {
+      "optional": false
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "module": "fesm2022/ng-text-editor-lite.mjs",
+  "typings": "types/ng-text-editor-lite.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./types/ng-text-editor-lite.d.ts",
+      "default": "./fesm2022/ng-text-editor-lite.mjs"
+    }
+  },
+  "type": "module"
+}

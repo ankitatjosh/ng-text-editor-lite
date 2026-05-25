@@ -1,0 +1,22 @@
+<div style="max-width: 800px; margin: 40px auto; padding: 0 16px; font-family: sans-serif;">
+  <h1>ng-text-editor-lite — Demo</h1>
+
+  <div style="margin-bottom: 12px; display: flex; gap: 8px;">
+    <button (click)="setMode('edit')">Edit</button>
+    <button (click)="setMode('readonly')">Readonly</button>
+    <button (click)="setMode('preview')">Preview</button>
+    <button (click)="setMode('disabled')">Disabled</button>
+  </div>
+
+  <ng-text-editor-lite
+    [content]="html()"
+    [mode]="mode()"
+    [config]="config"
+    (contentChange)="onChange($event)"
+  />
+
+  <details style="margin-top: 24px;">
+    <summary>Raw HTML output</summary>
+    <pre style="background:#f4f4f4; padding:12px; border-radius:4px; overflow:auto;">{{ html() }}</pre>
+  </details>
+</div>

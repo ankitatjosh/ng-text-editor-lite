@@ -1,0 +1,50 @@
+.ngx-editor-lite__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--ngx-editor-toolbar-bg, #f9fafb);
+  border-bottom: 1px solid var(--ngx-editor-border, #d1d5db);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  button {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--ngx-editor-color, #1a1a1a);
+    cursor: pointer;
+    min-width: 28px;
+    min-height: 28px;
+    transition: background 0.1s;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ngx-editor-link-color, #2563eb);
+      outline-offset: 1px;
+    }
+
+    &.active {
+      background: rgba(37, 99, 235, 0.12);
+      color: var(--ngx-editor-link-color, #2563eb);
+    }
+  }
+}
+
+.ngx-editor-lite__toolbar-sep {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background: var(--ngx-editor-border, #d1d5db);
+  margin: 0 4px;
+}

@@ -1,0 +1,45 @@
+{
+  "name": "ng-text-editor-lite",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve demo",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "build:lib": "ng build ng-text-editor-lite",
+    "build:lib:prod": "ng build ng-text-editor-lite --configuration production",
+    "test:lib": "ng test ng-text-editor-lite --watch=false",
+    "test:demo": "ng test demo --watch=false",
+    "test:all": "ng test ng-text-editor-lite --watch=false && ng test demo --watch=false",
+    "lint": "ng lint ng-text-editor-lite",
+    "prepublish:lib": "npm run build:lib:prod",
+    "publish:lib": "cd dist/ng-text-editor-lite && npm publish",
+    "publish:lib:dry": "cd dist/ng-text-editor-lite && npm publish --dry-run",
+    "build:demo:gh-pages": "ng build demo --configuration production --base-href=/ng-text-editor-lite/"
+  },
+  "private": true,
+  "packageManager": "npm@10.9.2",
+  "dependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "dompurify": "^3.4.5",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.2.12",
+    "@angular/cli": "^21.2.11",
+    "@angular/compiler-cli": "^21.2.0",
+    "@types/dompurify": "^3.0.5",
+    "jsdom": "^28.0.0",
+    "ng-packagr": "^21.2.0",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
+  }
+}
