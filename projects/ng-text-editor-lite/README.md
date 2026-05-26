@@ -6,6 +6,9 @@
 [![license](https://img.shields.io/npm/l/@thedevankit/ng-text-editor-lite)](https://github.com/thedevankit/ng-text-editor-lite/blob/main/LICENSE)
 [![Angular](https://img.shields.io/badge/Angular-18%2B-red)](https://angular.dev)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/@thedevankit/ng-text-editor-lite)](https://bundlephobia.com/package/@thedevankit/ng-text-editor-lite)
+[![demo](https://img.shields.io/badge/demo-live-brightgreen)](https://ankitatjosh.github.io/ng-text-editor-lite/)
+
+**[► Live Demo](https://ankitatjosh.github.io/ng-text-editor-lite/)** — try the editor in your browser, switch between edit / readonly / preview / disabled modes, and toggle dark & light themes.
 
 ---
 
@@ -280,6 +283,7 @@ Full documentation is available in the GitHub repository:
 
 | Guide | Link |
 |---|---|
+| **Live Demo** | [ankitatjosh.github.io/ng-text-editor-lite](https://ankitatjosh.github.io/ng-text-editor-lite/) |
 | Installation | [docs/installation.md](https://github.com/thedevankit/ng-text-editor-lite/blob/main/docs/installation.md) |
 | Angular Setup Examples | [docs/angular-setup.md](https://github.com/thedevankit/ng-text-editor-lite/blob/main/docs/angular-setup.md) |
 | Configuration Reference | [docs/configuration.md](https://github.com/thedevankit/ng-text-editor-lite/blob/main/docs/configuration.md) |

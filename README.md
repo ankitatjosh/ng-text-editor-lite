@@ -4,6 +4,13 @@ A lightweight, Angular-native WYSIWYG rich text editor with markdown-aware paste
 
 Built for Angular 18+ using `contenteditable` — no ProseMirror, no Quill, no TipTap. Isolated styles, DOMPurify sanitization, and full Reactive Forms support out of the box.
 
+[![npm version](https://img.shields.io/npm/v/@thedevankit/ng-text-editor-lite)](https://www.npmjs.com/package/@thedevankit/ng-text-editor-lite)
+[![license](https://img.shields.io/npm/l/@thedevankit/ng-text-editor-lite)](LICENSE)
+[![Angular](https://img.shields.io/badge/Angular-18%2B-red)](https://angular.dev)
+[![demo](https://img.shields.io/badge/demo-live-brightgreen)](https://ankitatjosh.github.io/ng-text-editor-lite/)
+
+**[► Live Demo](https://ankitatjosh.github.io/ng-text-editor-lite/)** — try the editor in your browser, switch modes, and toggle dark & light themes.
+
 ---
 
 ## Features
@@ -53,6 +60,7 @@ export class MyComponent {
 
 | Guide | Description |
 |---|---|
+| [**Live Demo**](https://ankitatjosh.github.io/ng-text-editor-lite/) | Try the editor in the browser |
 | [Installation](./docs/installation.md) | npm install, peer deps, NgModule vs standalone |
 | [Angular Setup](./docs/angular-setup.md) | Standalone, Reactive Forms, ngModel, mode switching |
 | [Configuration](./docs/configuration.md) | All `EditorConfig` options with types and defaults |
