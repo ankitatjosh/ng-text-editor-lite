@@ -26,7 +26,7 @@ const INITIAL_HTML = `
 <p>This is a weekend project that I started and continue maintaining.</p>
 <p>If you would like to help me or support my development work, feel free to contact me:</p>
 <p>Email: <a href="mailto:thedevankit@gmail.com" target="_blank" rel="noopener noreferrer">thedevankit@gmail.com</a></p>
-<p>GitHub: <a href="https://github.com/thedevankit" target="_blank" rel="noopener noreferrer">Your GitHub Profile</a></p>
+<p>GitHub: <a href="https://github.com/thedevankit" target="_blank" rel="noopener noreferrer">GitHub Profile</a></p>
 `.trim();
 
 @Component({
