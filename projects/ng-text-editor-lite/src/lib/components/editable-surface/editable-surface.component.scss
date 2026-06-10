@@ -51,9 +51,9 @@
     margin: 0.5em 0;
   }
 
-  strong { font-weight: 700; }
-  em { font-style: italic; }
-  s { text-decoration: line-through; }
+  strong, b { font-weight: 700; }
+  em, i { font-style: italic; }
+  s, strike { text-decoration: line-through; }
 
   a {
     color: var(--ngx-editor-link-color, #2563eb);

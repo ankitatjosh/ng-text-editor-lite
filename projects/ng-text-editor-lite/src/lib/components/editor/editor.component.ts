@@ -137,8 +137,17 @@ export class EditorComponent implements OnInit, OnChanges, OnDestroy, ControlVal
   @HostListener('keydown', ['$event'])
   handleKeydown(event: KeyboardEvent): void {
     const ctrl = event.ctrlKey || event.metaKey;
-    if (ctrl && event.key === 'b') { event.preventDefault(); this.selection.execFormat('bold'); }
-    if (ctrl && event.key === 'i') { event.preventDefault(); this.selection.execFormat('italic'); }
+    if (ctrl && event.key === 'b') {
+      event.preventDefault();
+      this.selection.execFormat('bold');
+      // Normalize after execCommand so <b> becomes <strong>
+      setTimeout(() => this.surfaceComponent?.normalizeFormattingTags());
+    }
+    if (ctrl && event.key === 'i') {
+      event.preventDefault();
+      this.selection.execFormat('italic');
+      setTimeout(() => this.surfaceComponent?.normalizeFormattingTags());
+    }
   }
 
   onContentChange(html: string): void {
@@ -155,7 +164,10 @@ export class EditorComponent implements OnInit, OnChanges, OnDestroy, ControlVal
   }
 
   onToolbarAction(action: ToolbarAction): void {
-    if (action === 'h1' || action === 'h2' || action === 'p') {
+    if (action === 'bold' || action === 'italic' || action === 'strikeThrough') {
+      // execCommand already ran in toolbar; normalize legacy tags it may have produced
+      this.surfaceComponent.normalizeFormattingTags();
+    } else if (action === 'h1' || action === 'h2' || action === 'p') {
       document.execCommand('formatBlock', false, action);
     } else if (action === 'link') {
       const url = prompt('Enter URL:');

@@ -13,29 +13,47 @@ export type ToolbarAction =
   imports: [CommonModule],
   template: `
     <div class="ngx-editor-lite__toolbar" role="toolbar" aria-label="Text formatting">
-      <button type="button" (click)="exec('bold')" [class.active]="isActive('bold')"
+      <button type="button"
+        (mousedown)="$event.preventDefault()"
+        (click)="exec('bold')" [class.active]="isActive('bold')"
         aria-label="Bold" title="Bold (Ctrl+B)"><b>B</b></button>
-      <button type="button" (click)="exec('italic')" [class.active]="isActive('italic')"
+      <button type="button"
+        (mousedown)="$event.preventDefault()"
+        (click)="exec('italic')" [class.active]="isActive('italic')"
         aria-label="Italic" title="Italic (Ctrl+I)"><i>I</i></button>
-      <button type="button" (click)="exec('strikeThrough')" [class.active]="isActive('strikeThrough')"
+      <button type="button"
+        (mousedown)="$event.preventDefault()"
+        (click)="exec('strikeThrough')" [class.active]="isActive('strikeThrough')"
         aria-label="Strikethrough"><s>S</s></button>
 
       <span class="ngx-editor-lite__toolbar-sep"></span>
 
-      <button type="button" (click)="action.emit('h1')" aria-label="Title (H1)">H1</button>
-      <button type="button" (click)="action.emit('h2')" aria-label="Subtitle (H2)">H2</button>
-      <button type="button" (click)="action.emit('p')" aria-label="Body text">¶</button>
+      <button type="button"
+        (mousedown)="$event.preventDefault()"
+        (click)="action.emit('h1')" aria-label="Title (H1)">H1</button>
+      <button type="button"
+        (mousedown)="$event.preventDefault()"
+        (click)="action.emit('h2')" aria-label="Subtitle (H2)">H2</button>
+      <button type="button"
+        (mousedown)="$event.preventDefault()"
+        (click)="action.emit('p')" aria-label="Body text">¶</button>
 
       <span class="ngx-editor-lite__toolbar-sep"></span>
 
-      <button type="button" (click)="exec('insertUnorderedList')"
+      <button type="button"
+        (mousedown)="$event.preventDefault()"
+        (click)="exec('insertUnorderedList')"
         [class.active]="isActive('insertUnorderedList')" aria-label="Bullet list">• List</button>
-      <button type="button" (click)="exec('insertOrderedList')"
+      <button type="button"
+        (mousedown)="$event.preventDefault()"
+        (click)="exec('insertOrderedList')"
         [class.active]="isActive('insertOrderedList')" aria-label="Numbered list">1. List</button>
 
       <span class="ngx-editor-lite__toolbar-sep"></span>
 
-      <button type="button" (click)="action.emit('link')" aria-label="Insert link">🔗</button>
+      <button type="button"
+        (mousedown)="$event.preventDefault()"
+        (click)="action.emit('link')" aria-label="Insert link">🔗</button>
     </div>
   `,
   styleUrls: ['./toolbar.component.scss'],

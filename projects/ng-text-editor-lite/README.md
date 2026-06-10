@@ -11,6 +11,10 @@
 **[► Live Demo](https://ankitatjosh.github.io/ng-text-editor-lite/)** — try the editor in your browser, switch between edit / readonly / preview / disabled modes, and toggle dark & light themes.
 
 ---
+## DEMO LINK 
+- Demo Link = https://ankitatjosh.github.io/ng-text-editor-lite/
+- Repo Link = https://github.com/ankitatjosh/ng-text-editor-lite
+---
 
 ## What is this?
 
