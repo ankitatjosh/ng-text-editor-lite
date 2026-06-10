@@ -1,6 +1,6 @@
 {
   "name": "@thedevankit/ng-text-editor-lite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight Angular 18+ WYSIWYG rich text editor with markdown-aware paste, CSS isolation, DOMPurify sanitization, and full Reactive Forms support. No ProseMirror, no Quill, no TipTap.",
   "keywords": [
     "angular",
