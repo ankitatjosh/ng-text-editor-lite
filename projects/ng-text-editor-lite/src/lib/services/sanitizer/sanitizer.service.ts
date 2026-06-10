@@ -17,14 +17,34 @@ DOMPurify.addHook('afterSanitizeAttributes', (node) => {
   }
 });
 
+// Maps legacy/alias tags to their canonical HTML5 semantic equivalents
+const TAG_REMAP: Record<string, string> = { b: 'strong', i: 'em', strike: 's', del: 's' };
+
 @Injectable({ providedIn: 'root' })
 export class SanitizerService {
   sanitize(html: string): string {
-    return DOMPurify.sanitize(html, {
+    const normalized = this.normalizeHtml(html);
+    return DOMPurify.sanitize(normalized, {
       ALLOWED_TAGS,
       ALLOWED_ATTR,
       ALLOW_DATA_ATTR: false,
       FORBID_TAGS: ['script', 'style', 'iframe', 'object', 'embed'],
     }) as string;
+  }
+
+  private normalizeHtml(html: string): string {
+    if (!html) return html;
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    Object.entries(TAG_REMAP).forEach(([from, to]) => {
+      doc.querySelectorAll(from).forEach(el => {
+        const replacement = doc.createElement(to);
+        replacement.innerHTML = el.innerHTML;
+        Array.from(el.attributes).forEach(attr =>
+          replacement.setAttribute(attr.name, attr.value)
+        );
+        el.replaceWith(replacement);
+      });
+    });
+    return doc.body.innerHTML;
   }
 }
